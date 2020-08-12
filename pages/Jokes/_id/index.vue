@@ -1,5 +1,10 @@
 <template>
-  <div>{{ $route.params.id }}</div>
+  <div>
+    <nuxt-link to="/jokes">Back To Jokes</nuxt-link>
+    <h2>{{ joke }}</h2>
+    <hr />
+    <small>Joke ID: {{ $route.params.id }}</small>
+  </div>
 </template>
 
 <script>
@@ -24,7 +29,6 @@ export default {
         config
       );
 
-      // console.log(res.data);
       this.joke = res.data.joke;
     } catch (err) {
       console.log(err);
